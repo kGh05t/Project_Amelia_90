@@ -37,15 +37,15 @@ const theme=createTheme({
 });
 
 export const TEXT_INPUT=()=>{
-    const {loader,animate,setAnimate,disable,flag,setFlag,message,setMessage,
+    const {loader,disable,flag,setFlag,message,
         setPayload,setDisable,summonerName,setSummonername,setLoader}=useContext(lolcontext);
     const [server,setServer] = useState('EUW')
     let poroimage='';
     let p={summonerName,server};
   
-    const handle_server_change=(event)=>{
-        setServer(event.target.value);
-    }
+    // const handle_server_change=(event)=>{
+    //     setServer(event.target.value);
+    // }
 
     const textfunc=()=>{
         return alert("Request Sent!")

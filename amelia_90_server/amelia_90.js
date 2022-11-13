@@ -16,11 +16,10 @@ app.listen(port, function(){
 })
 
 app.get("/", function (req, res){
-    
     res.send("<p> Home text</p>");
-    console.log('page sent')
-    
+    console.log('page sent')    
 })
+
 app.use(bodyparser.json());
 
 

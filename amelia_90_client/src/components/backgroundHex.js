@@ -18,6 +18,7 @@ const ParticlesComponent = (props) => {
       }
       else if(loader){
         options=hexpage;
+        setMessage('Porodicting...')
       }
       else if(payload.length===2){
         options=errorpage;
@@ -26,8 +27,7 @@ const ParticlesComponent = (props) => {
       else if (payload.length>2){
         options=resultpage;
         setMessage('Porodicted!')
-      }
-        //return end
+      }    
    
     
   

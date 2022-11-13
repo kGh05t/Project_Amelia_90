@@ -3,13 +3,13 @@ import './amelia_90.css';
 import {TEXT_INPUT} from './components/form';
 import {Cards} from './components/cards';
 import { lolcontext } from './components/contextLol';
-import React, {useState,useCallback } from 'react';
+import React, {useState } from 'react';
 import {Loader, } from './components/loaderComp'
 // import Hexbg from './components/backgroundHex'
 // import React, { useCallback } from "react";
-import Particles from "./components/backgroundHex";
+
 import ParticlesComponent from './components/backgroundHex';
-import { polygonPathName, loadPolygonPath } from "tsparticles-path-polygon";
+
 
 //export const lolcontext= createContext();
 function App() {
@@ -20,10 +20,7 @@ function App() {
   const [payload,setPayload]=useState([]);
   const [loader,setLoader]=useState(false);
   const [message,setMessage]= useState('Porodictor')
-  var divclass='running';
-    if(!animate){
-        divclass='paused';
-    }
+  
   return (
     // <div className={divclass}>
      <div className='amelia_root' style={{alignItems:'center'}}>    
