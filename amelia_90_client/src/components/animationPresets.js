@@ -1,4 +1,4 @@
-import poro from "../images/poro.png"
+
 
 export const resultpage={
     autoPlay: true,

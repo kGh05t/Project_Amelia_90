@@ -9,15 +9,15 @@ export const Loader=()=>{
                             marginLeft:'33%',textAlign:'center',marginTop:100}} >
                         <img alt='kaisaloader'
                         src={kaisagif}
-                        height='90'
+                        height='150'
                         margin-left='40%'
-                        width='120'
+                        width='180'
                         fit='cover'
                         bgColor='inherit'                        
                         />
                         <div className='linearprogress' style={{width:500}}>
                     <LinearProgress color='secondary'/>
-                    <Typography    variant="button" display="block" color='common.white' fontSize={22} gutterBottom>
+                    <Typography    variant="button" display="block" color='common.white' fontSize={24} gutterBottom>
                         ..Fetching Data from the Void..
                     </Typography>
                     
