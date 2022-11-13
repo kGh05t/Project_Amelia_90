@@ -46,7 +46,7 @@ export async function grabdatabypuuid(puuid){
 
 export async function grabmatchids(puuid){
             return new Promise((resolve)=>{
-            riotRequest.request('europe', 'puuid', '/lol/match/v5/matches/by-puuid/' + puuid + '/ids?count=3', function (err, response1) {
+            riotRequest.request('europe', 'puuid', '/lol/match/v5/matches/by-puuid/' + puuid + '/ids?count=9', function (err, response1) {
                 if(!err){
                     resolve(response1);
             }

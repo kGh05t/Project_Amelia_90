@@ -16,13 +16,11 @@ app.listen(port, function(){
 })
 
 app.get("/", function (req, res){
-    res.send("<p> Home text</p>");
+    res.send("<p> Server is Up</p>");
     console.log('page sent')    
 })
 
 app.use(bodyparser.json());
-
-
 
 mongo(port).catch(err => console.log(err));
 
@@ -31,10 +29,9 @@ app.post("/", async (req, res)=>{
     const serv=req.body.server;
     const p= req.body.p;
     console.log("request received",summoner,serv);
-    async function process(){
-       // await process_input();
+    async function process(){       
        console.log(summoner,serv);
-    } 
+    }    
     res.json(await test_start(summoner));
     console.log("Query Finished! Server is ready to receive new request!!")
     
