@@ -39,7 +39,7 @@ const theme=createTheme({
 export const TEXT_INPUT=()=>{
     const {loader,animate,setAnimate,disable,flag,setFlag,message,setMessage,
         setPayload,setDisable,summonerName,setSummonername,setLoader}=useContext(lolcontext);
-    const [server,setServer] = useState('')
+    const [server,setServer] = useState('EUW')
     let poroimage='';
     let p={summonerName,server};
   
@@ -56,7 +56,7 @@ export const TEXT_INPUT=()=>{
        
         
         console.log("axios request sent",p);
-       axios.post("//192.168.191.140:5000",p)
+       axios.post("https://projectamelia90.herokuapp.com/",p)
        .then(setDisable(true),setFlag(true),setLoader(true))
        .then(console.log("request sent"))
        .catch(err=>console.log(err))
@@ -90,7 +90,7 @@ export const TEXT_INPUT=()=>{
             id='server-select'
             label='Server'
             value={server}
-            onChange={handle_server_change}>
+            >
                 <MenuItem value={'BR'}>Brazil </MenuItem>
                 <MenuItem value={'EUW'}>Europe West </MenuItem>
                 <MenuItem value={'NA'}>North America </MenuItem>
