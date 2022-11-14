@@ -5,8 +5,8 @@ export const Loader=()=>{
     
             return(
                     <div className='loaderdiv' style={{zIndex:100,alignContent:'center',
-                            display:'inline-block',width:500,alignItems:'center',position:'relative',
-                            marginLeft:'33%',textAlign:'center',marginTop:100}} >
+                            display:'flex-center',width:500,alignItems:'center',position:'relative',
+                            marginLeft:'',textAlign:'center',marginTop:100}} >
                         <img alt='kaisaloader'
                         src={kaisagif}
                         height='150'

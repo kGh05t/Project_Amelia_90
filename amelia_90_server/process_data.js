@@ -47,10 +47,9 @@ const summoner_schema = new mongoose.Schema({
     
 async function savematchdata(d=[],idlist=[],tempname=[]){    
     for (var k=0;k<idlist.length;k++){
-        var matchids=await grabmatchids(d[k]);
-        var f = await grabchampionmastery(idlist[k]);
-       
-        
+        var matchids=[]
+        matchids.push(await grabmatchids(d[k]));
+        var f = await grabchampionmastery(idlist[k]);      
             for(var x=0;x<matchids.length;x++){
                 var e = await grabmatchdata(matchids[x]);                                     
                 //match_data1.push(e);
