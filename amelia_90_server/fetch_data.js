@@ -23,15 +23,15 @@ async function fetchData(summonername){
         kills.push((matchinfo[t].match_data.info.participants[0].kills));
         damage.push((matchinfo[t].match_data.info.participants[0].totalDamageDealtToChampions));
         assist.push((matchinfo[t].match_data.info.participants[0].assists));  
-
-        }
+      }
         //console.log("docs length",matchinfo.length); 
        //console.log("kda and champids list:", championIds,kills,damage,assist);
     for(var f=0;f<championIds.length;f++){
         let champ_points = await matchdata.aggregate([{ $match: {"name":summonername,"seq":1, "champion_mastery":
         { "$elemMatch": { "$and": [{ "championId": championIds[f] }] } } } },
          { "$project": {"champion_mastery": { "$filter": { "input": "$champion_mastery",
-          "as": "champion_mastery","cond": { "$and": [{ "$eq": ["$$champion_mastery.championId", championIds[f]]}]}}}} }]);
+          "as": "champion_mastery","cond":
+           { "$and": [{ "$eq": ["$$champion_mastery.championId", championIds[f]]}]}}}} }]);
         
         points.push(champ_points[0].champion_mastery[0].championPoints);
         //console.log(champ_points[0].champion_mastery[0].championPoints);        
@@ -41,6 +41,10 @@ async function fetchData(summonername){
     blue_team_levels=summonerLevels.slice(0,Math.ceil(summonerLevels.length/2));
     red_team_levels=summonerLevels.slice(Math.ceil(summonerLevels.length/2),(summonerLevels.length));
     console.log("levels arrays:",blue_team_levels,red_team_levels,summonerLevels);
+    
+    if(points.length==0){
+      points.push(100000)
+    }
     finalsummonerData=[Math.round(ss.mean(points)),    //get avg champ mastery points
                       Math.round(ss.mean(kills)), 
                       Math.round(ss.mean(damage)), 
