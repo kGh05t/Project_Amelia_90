@@ -56,7 +56,7 @@ async function savematchdata(d=[],idlist=[],tempname=[]){
                 const matchdata1= new matchdata({
                     seq:((x+1)),
                     name:tempname[k],
-                    matchid:matchids[x],
+                    matchid:matchids[0][x],
                     match_data: e,
                     champion_mastery:f,                                                       
                 });
