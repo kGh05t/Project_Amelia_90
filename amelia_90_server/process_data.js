@@ -106,7 +106,7 @@ export async function process_input(name){
         var g=await grabdata(d.participants[x].summonerName)
         temp.push(g) //get puuid list ,summonername list and summonerLevels
         summonerList.push(d.participants[x].summonerName)               
-        puuidList.push(temp.puuid);
+        puuidList.push(temp[0].puuid);
         summonerLevels.push(temp.summonerLevel);
         profileIconIds.push(temp.profileIconId);
         currentchampId.push(d.participants[x].championId)
