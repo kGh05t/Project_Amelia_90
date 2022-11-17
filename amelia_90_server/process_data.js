@@ -47,8 +47,8 @@ const summoner_schema = new mongoose.Schema({
     
 async function savematchdata(d=[],idlist=[],tempname=[]){    
     for (var k=0;k<idlist.length;k++){
-        var matchids=[]
-        matchids.push(await grabmatchids(d[k]));
+        
+        var matchids=(await grabmatchids(d[k]));
         var f = await grabchampionmastery(idlist[k]);      
             for(var x=0;x<matchids.length;x++){
                 var e = await grabmatchdata(matchids[x]);                                     
@@ -56,7 +56,7 @@ async function savematchdata(d=[],idlist=[],tempname=[]){
                 const matchdata1= new matchdata({
                     seq:((x+1)),
                     name:tempname[k],
-                    matchid:matchids[0][x],
+                    matchid:matchids[x],
                     match_data: e,
                     champion_mastery:f,                                                       
                 });
@@ -102,11 +102,11 @@ export async function process_input(name){
     }
     //await errorhandle(d);
     for(var x=0; x<d.participants.length;x++){     
-        var temp=[]
+       
         var g=await grabdata(d.participants[x].summonerName)
-        temp.push(g) //get puuid list ,summonername list and summonerLevels
+        var temp=g; //get puuid list ,summonername list and summonerLevels
         summonerList.push(d.participants[x].summonerName)               
-        puuidList.push(temp[0].puuid);
+        puuidList.push(temp.puuid);
         summonerLevels.push(temp.summonerLevel);
         profileIconIds.push(temp.profileIconId);
         currentchampId.push(d.participants[x].championId)
