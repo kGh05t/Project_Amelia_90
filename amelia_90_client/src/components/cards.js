@@ -13,8 +13,7 @@ export const Cards = () => {
         let checkpayload=obj.p;
           let boxsx = {
             display:'block',
-            width:'auto',
-            // marginLeft:'0%',
+            width:'auto',            
             marginTop:'5%',
             alignContents:'center',
            textAlignLast:'center',
@@ -108,8 +107,7 @@ export const Cards = () => {
 
         console.log(checkpayload,summonerName,checkpayload.length)
 
-          if(flag && checkpayload.length>2){
-            
+          if(flag && checkpayload.length>2){            
             for(var x=0;x<5;x++){                         //querying team color for searched summoner
               if(checkpayload[x].name===summonerName){
               console.log(checkpayload[x].name)
